@@ -1,0 +1,47 @@
+총괄적 에러
+
+ 
+ *개선 필요: const ws1 = new WebSocket("ws://localhost:8080"+<%=request.getContextPath%>+"/kaja"); 시 에러
+  ㄴ getContextPath시 프로젝트명은 정확하게 나옴 하지만 에러 
+  ㄴ 현재 상태: 백업본을 만들떄마나 일일히 수정해주어야 함
+ *개선방안: const ws1 = new WebSocket("ws://localhost:8080<%=request.getContextPath()%>/kaja"); 이걸ㄹ로 시도해보자
+
+
+12/29 23:00 
+-------------
+귓속말 완료 Live_Chat4
+  * 개선 필요: 채팅을 입력해야 닉네임이 등록됨 > 채팅을 시작하자마자 귓속말 불가
+  * 개선 방안1: 로그인 페이지 구현 > 채팅을 입력을 안해도 채팅 입장시 닉네임이 등록된 상태로 시작 > aa.data를 통해 귓속말 활성화  
+  (x)불가 개선 방안2: 로그인 페이지 구현 > 닉네임 session 값으로 뿌림 > onOpen시 미리 설정된 map에 thread id 와 nickname 저장 > onMessage 내용 수절 필요 
+  
+ 12/29 23:00
+ ------------
+귓속말 개선 방안1 구현 완료 Live_Chat5
+ * 개선필요: 본인 채팅은 오른쪽 정렬
+ * 개선방안1: kajachool에서 오른쪽 정렬 하면 될듯? 나중에 다 끝나면 해볼것
+ 
+ 12/30 00:40
+ --------------
+ 파일 디비 구현 시작 Live_Chat6
+
+
+12/30 02:55
+--------------
+파일 디비 입력 구현 완료 (1/2) Live_Chat6
+채팅 내역을 파일 입력 성공
+ *개선 필요: dynamic web project의 경우 tomcat과 연동되 war 파일이 생성되기 때문에 현재 경로가  이클립스쪽으로 잡힘 ServletContext로 metadata안의 파일로 연동해서 사용함
+ *개선 방안: 절대경로는 못바꾼다고함 https://stackoverflow.com/questions/2308188/getresourceasstream-vs-fileinputstream
+ 
+ 12/30 12:30
+ ------------
+ 파일 디비 출력 구현 시작 Live_Chat6
+ 
+ 12/30 18:00
+ ------------
+ 파일디비  출력 구현 완료 Live_chat6
+ 채팅 내역 불러오기 + 내 귓속말 내역 보이기 (귓속말 상대나 당사자가 아니면 보이지 않음)
+ + 채팅 아무것도 입력 안할시 alert 추가 Live_chat7
+ 
+ 12/30 19:00
+ -----------
+ 오라클 DB 연동 완료 Live_chat7
